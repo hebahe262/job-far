@@ -16,7 +16,7 @@ export class ProductsaComponent implements OnInit {
 
   private readonly  _productsService = inject(ProductsService);
    prodect!:prod[];
-
+  originalProducts!:prod[] 
     text:string="";
 
 
@@ -36,20 +36,29 @@ ngOnInit(): void {
       next:(res)=>{
         console.log(res);
         this.prodect=res;
-     
-         this.filterProducts(); 
+        this.originalProducts =res;
+         this.originalProducts = [...res];
+
+         
       },
       
     })
 
   };
 
+
+
   filterProducts(): void {
     
+    if (this.sortBy === '') {
+    this.prodect = [...this.originalProducts]; 
+    return;
+  }
+
     this.prodect = this.prodect.sort((a, b) => {
       switch (this.sortBy) {
         case 'priceLow':
-          return a.price - b.price;
+          return a.price - b.price
         case 'priceHigh':
           return b.price - a.price;
         case 'nameAZ':

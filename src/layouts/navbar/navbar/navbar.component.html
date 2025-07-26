@@ -1,21 +1,15 @@
-<!-- Navbar -->
-<!-- <div class="flex items-center justify-between px-6 py-4">
-  <h1 class="text-2xl font-bold">Products Gallery</h1>
-  <div class="flex items-center gap-4">
-    <button class="text-xl"><i class="fa-solid fa-moon"></i></button>
-    <a class="text-xl "><i class="fa-solid fa-cart-plus"></i></a>
-    
-  </div>
-</div> -->
 
-<!-- Filters -->
 
-<!-- Product Grid -->
-<nav class="bg-white dark:bg-black  w-full z-20 top-0 start-0  dark:border-gray-600 py-4">
+<!-- <nav class="bg-white dark:bg-black  w-full z-20 top-0 start-0  dark:border-gray-600 py-4">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
   <a   class="flex items-center space-x-3 rtl:space-x-reverse">
       <h1 class="self-center text-black text-3xl font-semibold whitespace-nowrap dark:text-white">Products Gallery</h1>
   </a>
+  <div class="">
+    <ul class="flex">
+      <li class="font"> Home</li>
+    </ul>
+  </div>
   <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
       <button type="button" class="cursor-pointer text-[#ccc] mr-2 bg-gray-300 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">  <a class="text-xl "><i class="fa-solid fa-cart-plus text-white"></i></a></button>
     <a  (click)="togelDekMood()" class="cursor-pointer text-[#ccc] bg-gray-300 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">  <i class="fa-solid fa-moon text-white"></i></a>
@@ -28,6 +22,47 @@
   </div>
   
   </div>
+</nav> -->
+
+
+<nav class="bg-white dark:bg-black w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 py-4">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    
+    <a class="flex items-center space-x-3 rtl:space-x-reverse">
+      <h1 class="self-center text-black dark:text-white text-3xl font-semibold whitespace-nowrap">Products Gallery</h1>
+    </a>
+
+    <div>
+      <ul class="flex text-black dark:text-white font-semibold">
+        <li [routerLink]="['/home']" class="hover:text-main transition-colors duration-300 cursor-pointer">Home</li>
+      </ul>
+    </div>
+
+    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+
+      <!-- Cart Button -->
+      <button type="button"
+        class="cursor-pointer me-2 text-black bg-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        <i class="fa-solid fa-cart-plus"></i>
+      </button>
+
+      <!-- Dark Mode Toggle -->
+      <a (click)="togelDekMood()" class="cursor-pointer text-black bg-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        <i class="fa-solid fa-moon "></i>
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button data-collapse-toggle="navbar-sticky" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600"
+        aria-controls="navbar-sticky" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+
+    </div>
+
+  </div>
 </nav>
-
-

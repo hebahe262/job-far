@@ -1,12 +1,12 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ProductsService } from '../../core/services/products/products.service';
 import { prod } from '../../core/prod/prod';
-import { SearchpipPipe } from '../../core/pipes/searchpip.pipe';
+
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-prodectdetails',
-  imports: [SearchpipPipe],
+  imports: [],
   templateUrl: './prodectdetails.component.html',
   styleUrl: './prodectdetails.component.css'
 })
