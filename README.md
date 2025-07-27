@@ -1,4 +1,4 @@
-# Job Fair Task 🎯
+# Job Fair EX 🎯
 
 🔗 **[Live Demo](https://job-far-d9wp.vercel.app/#/home)**
 
