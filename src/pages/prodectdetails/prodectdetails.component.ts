@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-prodectdetails',
   imports: [],
-  templateUrl: './prodectdetails.component.html',
+  templateUrl:'./prodectdetails.component.html',
   styleUrl: './prodectdetails.component.css'
 })
 export class ProdectdetailsComponent implements OnInit {

@@ -5,6 +5,8 @@ import { prod } from '../../../../core/prod/prod';
 import { SearchpipPipe } from '../../../../core/pipes/searchpip.pipe';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-productsa',
@@ -15,36 +17,56 @@ import { RouterLink } from '@angular/router';
 export class ProductsaComponent implements OnInit {
 
   private readonly  _productsService = inject(ProductsService);
-   prodect!:prod[];
-  originalProducts!:prod[] 
-    text:string="";
+  private readonly _toastrService =inject (ToastrService);
+private readonly  _ngxSpinnerService=inject(NgxSpinnerService);
+
+  // prodect!:prod[];
+  // originalProducts!:prod[] 
+  //   text:string="";
 
 
 
-  //    filteredProducts: any[] = [];
-  // searchTerm: string = '';
+ 
+  // sortBy: string = '';
+
+   prodect: prod[] = [];
+  originalProducts: prod[] = [];
+  text: string = '';
   sortBy: string = '';
+
 
 
 ngOnInit(): void {
     this.getProduct();
+    //  this._toastrService.success('Loaded');
     
 }
 
-  getProduct():void{
-    this._productsService.showProducts().subscribe({
-      next:(res)=>{
-        console.log(res);
-        this.prodect=res;
-        this.originalProducts =res;
-         this.originalProducts = [...res];
+ getProduct(): void {
+  this._ngxSpinnerService.show();
 
-         
-      },
-      
-    })
+  this._productsService.showProducts().subscribe({
+    next: (res) => {
+      // Check if the response is valid
+      if (Array.isArray(res)) {
+        this.prodect = res;
+        this.originalProducts = [...res];
+      } else {
+        this._toastrService.error('البيانات غير صحيحة', 'Error');
+      }
+    },
+    error: (err) => {
+      this._toastrService.error('فشل الاتصال بالسيرفر', 'Error');
+      console.error(err);
+    },
+    complete: () => {
+      this._ngxSpinnerService.hide();
+    }
+  });
+}
 
-  };
+
+  
 
 
 
