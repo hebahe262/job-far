@@ -18,7 +18,7 @@ togelDekMood(){
   if(localStorage.getItem('theam') =='dark') {
   document.documentElement.classList.remove('dark');
   document.body.classList.add('bg-white')
-    document.body.classList.remove('bg-black')
+    document.body.classList.remove('bg-[#101828]')
   localStorage.setItem('theam','light')
   }
 
@@ -26,7 +26,7 @@ togelDekMood(){
     document.documentElement.classList.add('dark');
   document.body.classList.remove('bg-white')
 
-     document.body.classList.add('bg-black')
+     document.body.classList.add('bg-[#101828]')
      localStorage.setItem('theam','dark')
   }
 
