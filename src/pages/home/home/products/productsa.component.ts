@@ -43,6 +43,7 @@ ngOnInit(): void {
 }
 
  getProduct(): void {
+
   this._ngxSpinnerService.show();
 
   this._productsService.showProducts().subscribe({
@@ -52,11 +53,11 @@ ngOnInit(): void {
         this.prodect = res;
         this.originalProducts = [...res];
       } else {
-        this._toastrService.error('البيانات غير صحيحة', 'Error');
+        this._toastrService.error('faild', 'Error');
       }
     },
     error: (err) => {
-      this._toastrService.error('فشل الاتصال بالسيرفر', 'Error');
+      this._toastrService.error('faild','Error');
       console.error(err);
     },
     complete: () => {
