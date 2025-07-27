@@ -9,7 +9,11 @@ import { RouterLink } from '@angular/router';
 })
 export class NavbarComponent {
 
+  isDarkMode=false
 togelDekMood(){
+  
+  this.isDarkMode=!this.isDarkMode
+  document.documentElement.classList.toggle('dark',this.isDarkMode);
   
   if(localStorage.getItem('theam') =='dark') {
   document.documentElement.classList.remove('dark');
@@ -25,6 +29,7 @@ togelDekMood(){
      document.body.classList.add('bg-black')
      localStorage.setItem('theam','dark')
   }
+
 }
 
 }

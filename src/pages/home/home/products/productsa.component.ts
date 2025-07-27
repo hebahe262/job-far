@@ -38,7 +38,7 @@ private readonly  _ngxSpinnerService=inject(NgxSpinnerService);
 
 ngOnInit(): void {
     this.getProduct();
-    //  this._toastrService.success('Loaded');
+   
     
 }
 
