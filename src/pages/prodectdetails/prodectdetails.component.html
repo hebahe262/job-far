@@ -2,18 +2,18 @@
 <section class="container mx-auto">
   <h1 class="text-center text-4xl text-main my-2 dark:text-white">Details Product</h1>
 
-  <div class="flex flex-wrap group place-items-center gap-8">
-    <div class="w-full md:w-3/12">
+  <div class="flex flex-wrap group place-items-center gap-8  animate__bounceIn ">
+    <div class="w-full md:w-3/12 animate__fadeInRight">
       <img [src]="detailsproduct.image" class="w-full rounded-md" [alt]="detailsproduct.title" />
     </div>
 
-    <div class="w-full md:w-6/12 mx-auto">
-      <h2 class="text-xl font-semibold mb-2 dark:text-white">{{ detailsproduct.title }}</h2>
-      <p class="text-gray-600 dark:text-gray-300 mb-4">{{ detailsproduct.description }}</p>
+    <div class="w-full md:w-6/12 mx-auto ">
+      <h2 class="text-xl font-semibold mb-2 dark:text-white  animate__bounceIn">{{ detailsproduct.title }}</h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-4 animate__bounceIn">{{ detailsproduct.description }}</p>
 
       <div class=" justify-between items-center mb-3">
      
-       <h3 class="text-sm font-bold text-gray-700 dark:text-gray-400"><span class="text-black">category:</span> {{ detailsproduct.category }}</h3>
+       <h3 class="text-sm font-bold text-gray-700 dark:text-gray-400"><span class="text-black dark:text-white">category:</span> {{ detailsproduct.category }}</h3>
           <p class="text-gray-800  dark:text-gray-200 font-medium">EGP {{ detailsproduct.price }} </p>
       </div>
 

@@ -1,8 +1,8 @@
 
-<section class="">
-  <h2 class="text-3xl font-bold my-0 text-main mt-2 dark:text-white">All popular products</h2>
+<section class="mt-15">
+  <h2 class="text-3xl font-bold my-0 text-main mt-2 dark:text-white  ">All popular products</h2>
 
-  <div class="container gap-10 text-center p-5 mx-auto w-[50%]">
+  <div class="container gap-10 text-center p-5 mx-auto w-[50%]  animate__bounceIn">
     <input
       [(ngModel)]="text"
       type="search"
@@ -19,7 +19,7 @@
   <select
     [(ngModel)]="sortBy"
     (change)="filterProducts()"
-    class="border px-4 py-2 rounded-md w-full md:w-1/4 mt-2 mb-5
+    class="border px-4 py-2 rounded-md w-full md:w-1/4 mt-2 mb-5  animate__bounceIn
            dark:bg-gray-700 dark:text-white dark:border-gray-600"
   >
     <option value="">Sort by : Featured</option>
@@ -31,7 +31,7 @@
   @let searchArr =  prodect.slice(0,15) | searchpip : text;
 
  @if(searchArr.length){
-  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 text-center">
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 text-center ">
    
 
       @for (prod of searchArr; track prod.id) {
